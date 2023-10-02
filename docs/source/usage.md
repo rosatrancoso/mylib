@@ -1,7 +1,5 @@
 .. _usage:
 
-#####
-Usage
-#####
+# Usage
 
 There is no usage

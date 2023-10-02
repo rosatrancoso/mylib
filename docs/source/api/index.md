@@ -1,8 +1,6 @@
 .. _api:
 
-###
-API
-###
+# API
 
 .. toctree::
    :titlesonly:
