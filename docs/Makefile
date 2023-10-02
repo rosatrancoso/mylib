@@ -6,8 +6,9 @@
 SPHINXOPTS       ?=
 SPHINXBUILD      ?= sphinx-build
 IS_COMMIT_TAGGED ?= false
-SOURCE_DIR        = source
-BUILD_DIR         = build
+CONF_FILE         = conf.py
+SOURCE_DIR        = _source
+BUILD_DIR         = _build
 PUBLISH_DST       = mylib
 
 override ENV = dev
@@ -26,18 +27,27 @@ help:
 %: Makefile
 	@$(SPHINXBUILD) -M $@ "$(SOURCE_DIR)" "$(BUILD_DIR)" $(SPHINXOPTS) $(O)
 
-clean:
+clean_build:
 	rm -rf $(BUILD_DIR)
+
+clean_source:
+	rm -rf $(SOURCE_DIR)
+
+clean: clean_source clean_build
+
+prep:
+	rsync -rtpv source/ $(SOURCE_DIR)/
+	cp -rpv $(CONF_FILE) $(SOURCE_DIR)/
 
 api:
 	sphinx-apidoc -e --ext-autodoc -f -o $(SOURCE_DIR)/api/package ../mylib
 	sphinx-apidoc -e --ext-autodoc -f -o $(SOURCE_DIR)/api/scripts ../scripts
 
-gen_html: clean
+gen_html: clean_build
 	@$(SPHINXBUILD) $(SOURCE_DIR) $(BUILD_DIR)
 
-all: api gen_html ;
-all2: clean gen_html ;
+all: prep api gen_html ;
+all2: clean prep gen_html ;
 
 publish:
 	aws s3 sync --delete --only-show-errors $(BUILD_DIR) s3://$$(aws ssm get-parameter --name /docs/$(ENV)/bucket_name --output text --query 'Parameter.Value')/$(PUBLISH_DST)
