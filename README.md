@@ -21,9 +21,9 @@ docs
     ├── conf.py
     └── index.rst
 
-	sphinx-apidoc -e --ext-autodoc -f -o source/api/package ../mylib
-	sphinx-apidoc -e --ext-autodoc -f -o source/api/scripts ../scripts
-    sphinx-build -M html source build
+sphinx-apidoc -e --ext-autodoc -f -o source/api/package ../mylib
+sphinx-apidoc -e --ext-autodoc -f -o source/api/scripts ../scripts
+sphinx-build -M html source build
 
 or 
 
