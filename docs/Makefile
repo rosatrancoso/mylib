@@ -46,7 +46,7 @@ api:
 gen_html: clean_build
 	@$(SPHINXBUILD) $(SOURCE_DIR) $(BUILD_DIR)
 
-all: prep api gen_html ;
+all: clean prep api gen_html ;
 all2: clean prep gen_html ;
 
 publish:
