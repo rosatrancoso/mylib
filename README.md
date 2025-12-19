@@ -4,12 +4,13 @@ Library to test sphinx docs
 
 ## Installation
 
-    mamba install -c conda-forge sphinx m2r2 sphinx_rtd_theme
-
+    mamba install -c conda-forge sphinx m2r2 sphinx_rtd_theme sphinx_mdinclude
 ## Quickstart sphinx
 
 ```
 sphinx-quickstart docs
+> Separate source and build directories (y/n) [n]: y
+
 
 docs
 ├── Makefile
@@ -28,5 +29,10 @@ sphinx-build -M html source build
 or 
 
 make html
+
+
+# GitHub pages
+
+https://rosatrancoso.github.io/mylib/
 
 ```
