@@ -9,7 +9,6 @@
 
 from datetime import datetime
 import os
-from pkg_resources import get_distribution
 import sys
 
 PROJECT = "mylib"
@@ -21,21 +20,15 @@ PROJECT = "mylib"
 #
 sys.path.insert(0, os.path.abspath("../.."))
 
-# -- Release/version
-_release = ''
-try:
-    _release = get_distribution(PROJECT).version
-except Exception:
-    pass
 
 # -- Project information -----------------------------------------------------
 
 project = PROJECT
 year = datetime.now().year
-project_copyright = "{year}, FR&D".format(year=year)
-author = '"MetService Forecast Research & Development'
-version = _release
-release = _release
+author = "RT"
+project_copyright = f"{year}_{author}"
+version = "0.1"
+release = version
 
 # -- General configuration ---------------------------------------------------
 
