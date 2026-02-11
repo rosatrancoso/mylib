@@ -4,7 +4,8 @@ Library to test sphinx docs
 
 ## Installation
 
-    mamba install -c conda-forge sphinx m2r2 sphinx_rtd_theme sphinx_mdinclude
+    conda install -c conda-forge sphinx sphinx-mdinclude sphinx-rtd-theme
+    
 ## Quickstart sphinx
 
 ```
