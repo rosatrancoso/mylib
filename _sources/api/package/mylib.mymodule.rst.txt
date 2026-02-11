@@ -1,0 +1,7 @@
+mylib.mymodule module
+=====================
+
+.. automodule:: mylib.mymodule
+   :members:
+   :show-inheritance:
+   :undoc-members:

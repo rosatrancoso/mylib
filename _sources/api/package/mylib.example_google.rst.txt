@@ -1,0 +1,7 @@
+mylib.example\_google module
+============================
+
+.. automodule:: mylib.example_google
+   :members:
+   :show-inheritance:
+   :undoc-members:

@@ -1,0 +1,19 @@
+mylib package
+=============
+
+Submodules
+----------
+
+.. toctree::
+   :maxdepth: 4
+
+   mylib.example_google
+   mylib.mymodule
+
+Module contents
+---------------
+
+.. automodule:: mylib
+   :members:
+   :show-inheritance:
+   :undoc-members:
