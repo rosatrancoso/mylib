@@ -6,6 +6,17 @@ Library to test sphinx docs
 
     conda install -c conda-forge sphinx sphinx-mdinclude sphinx-rtd-theme
     
+
+or 
+
+
+     python -m venv .venv
+     .venv/bin/activate
+     
+     pip install -e .
+     pip install -r requirements.txt
+
+
 ## Quickstart sphinx
 
 ```
